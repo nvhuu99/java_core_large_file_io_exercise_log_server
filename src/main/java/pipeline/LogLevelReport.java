@@ -25,27 +25,30 @@ public final class LogLevelReport extends LogPipeline {
 
     @Override
     public void handle(Object data) throws Exception {
-        if (data==null) {
+        if (data == EOF.SIGNAL) {
             var outPath = outDir.resolve("log_level_occurrence_report.csv");
             try (BufferedWriter w = Files.newBufferedWriter(outPath)) {
                 w.write("log_level,average_occur_time_seconds\n");
                 for (var lvl: counts.keySet()){
                     long c = counts.get(lvl);
                     long sum = deltas.getOrDefault(lvl, 0L);
-                    double avg=c>1?(double)sum/(c-1):0.0;
-                    w.write(lvl+","+avg+"\n");
+                    double avg = c > 1 ? (double)(sum/(c-1)) : 0.0;
+                    w.write(lvl + "," + avg + "\n");
                 }
             }
-        } else if (data instanceof LogItem) {
-            LogItem it=(LogItem)data;
-            String lvl=it.getLevel();
-            Instant ts=it.getTimestamp();
+            pipe(EOF.SIGNAL);
+        }
+        else if (data instanceof LogItem it) {
+            String lvl = it.getLevel();
+            Instant ts = it.getTimestamp();
             if (last.containsKey(lvl)){
-                long d=Duration.between(last.get(lvl),ts).getSeconds();
-                deltas.merge(lvl,d,Long::sum);
-                counts.merge(lvl,1,Integer::sum);
-            } else counts.put(lvl,1);
-            last.put(lvl,ts);
+                long d = Duration.between(last.get(lvl), ts).getSeconds();
+                deltas.merge(lvl, d, Long::sum);
+                counts.merge(lvl, 1, Integer::sum);
+            } else {
+                counts.put(lvl, 1);
+            }
+            last.put(lvl, ts);
         }
     }
 }

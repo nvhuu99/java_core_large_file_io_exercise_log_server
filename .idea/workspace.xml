@@ -28,9 +28,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 8
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 8
+}</component>
   <component name="ProjectId" id="2x7jsBWxRf6UXgpbqu0g8yP2RHM" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="1" id="Add" />
@@ -41,12 +41,72 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.LogFileGenerator.executor": "Run",
+    "Application.Main.executor": "Run",
+    "Application.ServerLogFileGenerator.executor": "Run",
+    "Application.UserJsonFileGenerator.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
+    "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
     "onboarding.tips.debug.path": "C:/Users/huu.nv/Desktop/sources/VTI/java_core_large_file_io_exercise_log_server/src/main/java/org/example/Main.java"
   }
 }]]></component>
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="format" />
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="LogFileGenerator" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="generate.LogFileGenerator" />
+      <module name="java_core_large_file_io_exercise_log_server" />
+      <option name="PROGRAM_PARAMETERS" value="C:\Users\huu.nv\Desktop\sources\VTI\java_core_large_file_io_exercise_log_server\.tmp\large_application.log 100" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="generate.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ServerLogFileGenerator" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="generate.ServerLogFileGenerator" />
+      <module name="java_core_large_file_io_exercise_log_server" />
+      <option name="PROGRAM_PARAMETERS" value="C:\Users\huu.nv\Desktop\sources\VTI\java_core_large_file_io_exercise_log_server\.tmp\large_server.log 100" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="generate.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserJsonFileGenerator" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="generate.UserJsonFileGenerator" />
+      <module name="java_core_large_file_io_exercise_log_server" />
+      <option name="PROGRAM_PARAMETERS" value="C:\Users\huu.nv\Desktop\sources\VTI\java_core_large_file_io_exercise_log_server\.tmp\large_users.json 100" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="generate.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.ServerLogFileGenerator" />
+        <item itemvalue="Application.UserJsonFileGenerator" />
+        <item itemvalue="Application.LogFileGenerator" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -57,16 +117,5 @@
       <updated>1747296211411</updated>
     </task>
     <servers />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/server/Main.java</url>
-          <line>13</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

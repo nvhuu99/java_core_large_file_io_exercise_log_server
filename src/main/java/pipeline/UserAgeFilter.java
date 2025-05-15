@@ -22,10 +22,14 @@ public final class UserAgeFilter extends LogPipeline {
 
     @Override
     public void handle(Object data) throws Exception {
-        if (data == null) { below.close(); above.close(); }
+        if (data == EOF.SIGNAL) {
+            below.close();
+            above.close();
+            pipe(EOF.SIGNAL);
+        }
         else if (data instanceof User u) {
             var w = u.getAge() < 30 ? below : above;
-            w.write(u.getName()+","+u.getAge()+","+u.getAddress()+","+u.getEmail()+"\n");
+            w.write(u.getName() + "," + u.getAge() + "," + u.getAddress() + "," + u.getEmail() + "\n");
         }
     }
 }
